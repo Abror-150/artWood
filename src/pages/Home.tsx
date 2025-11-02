@@ -21,12 +21,12 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
         </div>
         
-        <div className="container relative mx-auto flex h-full items-center px-4">
+        <div className="container relative mx-auto flex h-full items-center justify-center px-4">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-2xl text-center"
           >
             <h1 className="mb-4 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
               {t('hero.title')}
@@ -34,13 +34,13 @@ const Home = () => {
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
               {t('hero.subtitle')}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link to="/products">
                 <Button size="lg" className="text-lg">
                   {t('hero.cta1')}
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/cart">
                 <Button size="lg" variant="outline" className="text-lg">
                   {t('hero.cta2')}
                 </Button>

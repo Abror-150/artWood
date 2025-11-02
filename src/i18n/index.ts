@@ -108,9 +108,9 @@ const resources = {
       },
       hero: {
         title: "Art Wood Design",
-        subtitle: "Изделия ручной работы из дерева, созданные с любовью и точностью с 2006 года",
+        subtitle: "Изделия ручной работы из дерева, созданные с любовью и совершенством с 2006 года",
         cta1: "Посмотреть продукты",
-        cta2: "Заказать сейчас"
+        cta2: "Разместить заказ"
       },
       home: {
         description: "Мы создаем уникальную мебель ручной работы, деревянные украшения и персонализированные подарки. Каждое изделие создается с заботой и вниманием к деталям, сочетая традиционную резьбу с современным дизайном."
@@ -203,9 +203,9 @@ const resources = {
       },
       hero: {
         title: "Art Wood Design",
-        subtitle: "Handcrafted wooden products made with passion and precision since 2006",
+        subtitle: "Handcrafted wooden products created with love and perfection since 2006",
         cta1: "View Products",
-        cta2: "Order Now"
+        cta2: "Place an Order"
       },
       home: {
         description: "We create unique handmade furniture, wooden decorations, and personalized gifts. Each piece is crafted with care and fine detailing, blending traditional carving with modern design."
