@@ -24,19 +24,27 @@ const resources = {
         title: "Bizning mahsulotlar",
         chair: {
           name: "Qo'lda o'yilgan stul",
-          description: "Batafsil o'ymakorlik bilan tabiiy yog'ochdan yasalgan"
+          description: "Batafsil o'ymakorlik bilan tabiiy yog'ochdan yasalgan",
+          fullDescription: "Bu ajoyib stul mahalliy yog'ochdan qo'lda o'yilgan bo'lib, har bir detal diqqat bilan ishlov berilgan. An'anaviy hunarmandchilik zamonaviy dizayn bilan uyg'unlashgan holda, uyingizga nafis va bardoshli qo'shimcha bo'ladi."
         },
         ornament: {
           name: "Dekorativ stol bezagi",
-          description: "Uy yoki ofis uchun zamonaviy yog'och haykal"
+          description: "Uy yoki ofis uchun zamonaviy yog'och haykal",
+          fullDescription: "Zamonaviy va an'anaviy uslublarni birlashtirgan bu dekorativ bezak har qanday xonaga noyob charm qo'shadi. Yuqori sifatli yog'ochdan yasalgan va mukammal yakunlangan."
         },
         giftbox: {
           name: "Sovg'a qutisi",
-          description: "O'ymakorlik yoki logotip bilan moslashtiriladi"
+          description: "O'ymakorlik yoki logotip bilan moslashtiriladi",
+          fullDescription: "Premium yog'ochdan yasalgan moslashtirilgan sovg'a qutisi. Shaxsiy xabarlar, logotiplar yoki naqshlar bilan personalizatsiya qilish mumkin. Maxsus tadbirlar uchun mukammal."
         },
         addToCart: "Savatga qo'shish",
         price: "Narx",
         quantity: "Miqdor"
+      },
+      productDetail: {
+        backToProducts: "Mahsulotlarga qaytish",
+        notFound: "Mahsulot topilmadi",
+        addedToCart: "savatga qo'shildi"
       },
       about: {
         title: "Biz haqimizda",
@@ -119,19 +127,27 @@ const resources = {
         title: "Наши продукты",
         chair: {
           name: "Резной стул ручной работы",
-          description: "Из натурального дерева с детальной резьбой"
+          description: "Из натурального дерева с детальной резьбой",
+          fullDescription: "Этот красивый стул вручную вырезан из местной древесины с тщательно проработанной каждой деталью. Сочетая традиционное мастерство с современным дизайном, он станет элегантным и долговечным дополнением к вашему дому."
         },
         ornament: {
           name: "Декоративное украшение для стола",
-          description: "Стильная деревянная скульптура для дома или офиса"
+          description: "Стильная деревянная скульптура для дома или офиса",
+          fullDescription: "Это декоративное украшение сочетает современный и традиционный стили, добавляя уникальный шарм в любую комнату. Изготовлено из высококачественного дерева с безупречной отделкой."
         },
         giftbox: {
           name: "Подарочная коробка",
-          description: "С гравировкой или логотипом на заказ"
+          description: "С гравировкой или логотипом на заказ",
+          fullDescription: "Персонализированная подарочная коробка из премиального дерева. Может быть персонализирована личными сообщениями, логотипами или узорами. Идеально для особых случаев."
         },
         addToCart: "В корзину",
         price: "Цена",
         quantity: "Количество"
+      },
+      productDetail: {
+        backToProducts: "Вернуться к продуктам",
+        notFound: "Продукт не найден",
+        addedToCart: "добавлен в корзину"
       },
       about: {
         title: "О нас",
@@ -214,19 +230,27 @@ const resources = {
         title: "Our Products",
         chair: {
           name: "Hand-Carved Chair",
-          description: "Made from natural wood with detailed engraving"
+          description: "Made from natural wood with detailed engraving",
+          fullDescription: "This beautiful chair is hand-carved from local wood with every detail carefully crafted. Combining traditional craftsmanship with modern design, it makes an elegant and durable addition to your home."
         },
         ornament: {
           name: "Decorative Table Ornament",
-          description: "Stylish wood sculpture for home or office"
+          description: "Stylish wood sculpture for home or office",
+          fullDescription: "This decorative piece blends contemporary and traditional styles, adding unique charm to any room. Crafted from high-quality wood with a perfect finish."
         },
         giftbox: {
           name: "Gift Box",
-          description: "Customizable with engraving or logo"
+          description: "Customizable with engraving or logo",
+          fullDescription: "A customizable gift box made from premium wood. Can be personalized with messages, logos, or patterns. Perfect for special occasions."
         },
         addToCart: "Add to Cart",
         price: "Price",
         quantity: "Quantity"
+      },
+      productDetail: {
+        backToProducts: "Back to Products",
+        notFound: "Product not found",
+        addedToCart: "added to cart"
       },
       about: {
         title: "About Us",

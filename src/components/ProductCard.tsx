@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Plus, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -13,6 +14,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
 
   const handleIncrement = () => setQuantity((prev) => prev + 1);
@@ -30,15 +32,18 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -8 }}
     >
-      <Card className="overflow-hidden hover-lift">
-        <div className="aspect-square overflow-hidden">
+      <Card className="overflow-hidden hover-lift cursor-pointer">
+        <div 
+          className="aspect-square overflow-hidden"
+          onClick={() => navigate(`/product/${product.id}`)}
+        >
           <img
             src={product.image}
             alt={product.name}
             className="h-full w-full object-cover transition-transform duration-300 hover:scale-110"
           />
         </div>
-        <CardContent className="p-6">
+        <CardContent className="p-6" onClick={() => navigate(`/product/${product.id}`)}>
           <h3 className="mb-2 text-xl font-semibold">{product.name}</h3>
           <p className="mb-4 text-sm text-muted-foreground">{product.description}</p>
           <div className="mb-4 flex items-center justify-between">
