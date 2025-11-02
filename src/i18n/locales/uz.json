@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "products": "Mahsulotlar",
+    "about": "Biz haqimizda",
+    "faq": "Savollar",
+    "contact": "Aloqa"
+  },
+  "hero": {
+    "title": "Art Wood Design",
+    "subtitle": "2006 yildan beri mehr va mukammallik bilan yaratilgan qo'lda ishlab chiqarilgan yog'och mahsulotlari",
+    "cta1": "Mahsulotlarni ko'rish",
+    "cta2": "Buyurtma berish"
+  },
+  "home": {
+    "description": "Biz noyob qo'lda ishlab chiqarilgan mebellar, yog'och bezaklar va shaxsiy sovg'alar yaratamiz. Har bir asar g'amxo'rlik va nozik detallarga e'tibor bilan yaratiladi, an'anaviy o'ymakorlikni zamonaviy dizayn bilan uyg'unlashtirib."
+  },
+  "products": {
+    "title": "Bizning mahsulotlar",
+    "chair": {
+      "name": "Qo'lda o'yilgan stul",
+      "description": "Batafsil o'ymakorlik bilan tabiiy yog'ochdan yasalgan"
+    },
+    "ornament": {
+      "name": "Dekorativ stol bezagi",
+      "description": "Uy yoki ofis uchun zamonaviy yog'och haykal"
+    },
+    "giftbox": {
+      "name": "Sovg'a qutisi",
+      "description": "O'ymakorlik yoki logotip bilan moslashtiriladi"
+    },
+    "addToCart": "Savatga qo'shish",
+    "price": "Narx",
+    "quantity": "Miqdor"
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "story": "Art Wood Design 2006 yildan beri qo'lda ishlab chiqarilgan yog'och san'atini yaratib kelmoqda. Bizning usta hunarmand an'anaviy o'ymakorlik texnikalarini zamonaviy dizayn tamoyillari bilan birlashtirib, bardoshli, badiiy va moslashtirilgan yog'och mahsulotlarini ishlab chiqaradi. Biz ekologik toza materiallar va mahalliy yog'ochdan foydalanamiz, tabiat va hunarmandchilik o'rtasidagi uyg'unlikni saqlab qolamiz.",
+    "certificates": "Sertifikatlar va mukofotlar",
+    "cert1": "2010 - Mahalliy qo'l san'ati ko'rgazmasida 1-o'rin",
+    "cert2": "2014 - Milliy dizayn festivali ishtirokchisi",
+    "cert3": "2019 - Xalqaro yog'och san'ati ko'rgazmasi sertifikati"
+  },
+  "faq": {
+    "title": "Ko'p so'raladigan savollar",
+    "q1": "Yetkazib berish qancha vaqt oladi?",
+    "a1": "Odatda 3-14 kun, mahsulotga bog'liq. Buyurtma asosidagi mahsulotlar 7-30 kun talab qilishi mumkin.",
+    "q2": "Maxsus o'lcham yoki dizayn buyurtma qilishim mumkinmi?",
+    "a2": "Ha! Buyurtma shaklida yoki aloqa formasida ma'lumotlaringizni qoldiring.",
+    "q3": "Qanday to'lash mumkin?",
+    "a3": "Biz onlayn to'lovlar, yetkazib berishda naqd to'lov yoki bank o'tkazmalarini qabul qilamiz.",
+    "q4": "Mahsulotni qaytarish yoki almashtirish uchun nima qilishim kerak?",
+    "a4": "Ishlab chiqarish xatoligi bo'lgan taqdirda 14 kun ichida qaytarish mumkin."
+  },
+  "contact": {
+    "title": "Biz bilan bog'laning",
+    "address": "Manzil",
+    "addressValue": "Toshkent, O'zbekiston",
+    "phone": "Telefon",
+    "email": "Email",
+    "hours": "Ish vaqti",
+    "hoursValue": "Dushanba–Shanba, 9:00 – 18:00",
+    "form": {
+      "name": "Ism",
+      "email": "Email",
+      "message": "Xabar",
+      "submit": "Yuborish"
+    }
+  },
+  "cart": {
+    "title": "Savat",
+    "empty": "Savatingiz bo'sh",
+    "total": "Jami",
+    "checkout": "Buyurtma berish",
+    "continueShopping": "Xarid davom ettirish"
+  },
+  "order": {
+    "title": "Buyurtmani tasdiqlash",
+    "fullName": "To'liq ism",
+    "phone": "Telefon raqam",
+    "email": "Email",
+    "address": "Yetkazib berish manzili",
+    "notes": "Qo'shimcha eslatmalar (ixtiyoriy)",
+    "submit": "Buyurtmani tasdiqlash",
+    "success": "Rahmat! Buyurtmangiz qabul qilindi. Tez orada siz bilan bog'lanamiz."
+  },
+  "footer": {
+    "copyright": "© 2006–2025 Art Wood Design - Barcha huquqlar himoyalangan",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari",
+    "delivery": "Yetkazib berish siyosati"
+  }
+}
