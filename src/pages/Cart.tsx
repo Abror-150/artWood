@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Trash2, Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
-import OrderModal from "@/components/OrderModal";
+import {OrderModal} from "@/components/OrderModal";
 import { motion } from "framer-motion";
 
 const Cart = () => {

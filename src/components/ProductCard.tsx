@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { Plus, Minus } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Product } from '@/contexts/CartContext';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { Plus, Minus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Product } from "@/contexts/CartContext";
+import { motion } from "framer-motion";
 
 interface ProductCardProps {
   product: Product;
@@ -33,7 +33,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
       whileHover={{ y: -8 }}
     >
       <Card className="overflow-hidden hover-lift cursor-pointer">
-        <div 
+        <div
           className="aspect-square overflow-hidden"
           onClick={() => navigate(`/product/${product.id}`)}
         >
@@ -43,20 +43,25 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
             className="h-full w-full object-cover transition-transform duration-300 hover:scale-110"
           />
         </div>
-        <CardContent className="p-6" onClick={() => navigate(`/product/${product.id}`)}>
+        <CardContent
+          className="p-6"
+          onClick={() => navigate(`/product/${product.id}`)}
+        >
           <h3 className="mb-2 text-xl font-semibold">{product.name}</h3>
-          <p className="mb-4 text-sm text-muted-foreground">{product.description}</p>
+          <p className="mb-4 text-sm text-muted-foreground">
+            {product.description}
+          </p>
           <div className="mb-4 flex items-center justify-between">
             <span className="text-sm font-medium text-muted-foreground">
-              {t('products.price')}:
+              {t("products.price")}:
             </span>
             <span className="text-2xl font-bold text-primary">
-              ${(product.price * quantity).toFixed(2)}
+              ${(Number(product.price) * quantity).toFixed(2)}
             </span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium text-muted-foreground">
-              {t('products.quantity')}:
+              {t("products.quantity")}:
             </span>
             <div className="flex items-center space-x-2">
               <Button
@@ -81,7 +86,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         </CardContent>
         <CardFooter className="p-6 pt-0">
           <Button onClick={handleAddToCart} className="w-full">
-            {t('products.addToCart')}
+            {t("products.addToCart")}
           </Button>
         </CardFooter>
       </Card>
