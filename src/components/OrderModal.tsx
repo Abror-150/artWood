@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -16,12 +16,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { useCart } from '@/contexts/CartContext';
-import { toast } from 'sonner';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
+import { useCreateOrder } from "@/hooks/api/useOrder";
 
 interface OrderModalProps {
   open: boolean;
@@ -29,10 +30,10 @@ interface OrderModalProps {
 }
 
 const formSchema = z.object({
-  fullName: z.string().min(2, 'Name must be at least 2 characters'),
-  phone: z.string().min(9, 'Phone number is required'),
-  email: z.string().email('Invalid email address'),
-  address: z.string().min(5, 'Address is required'),
+  fullName: z.string().min(2, "Name must be at least 2 characters"),
+  phone: z.string().min(9, "Phone number is required"),
+  email: z.string().email("Invalid email address"),
+  address: z.string().min(5, "Address is required"),
   notes: z.string().optional(),
 });
 
@@ -44,42 +45,55 @@ const OrderModal = ({ open, onOpenChange }: OrderModalProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: '',
-      phone: '',
-      email: '',
-      address: '',
-      notes: '',
+      fullName: "",
+      phone: "",
+      email: "",
+      address: "",
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log('Order submitted:', {
-      ...values,
-      items: cartItems,
-      total: getTotalPrice(),
+  const createOrder = useCreateOrder();
+
+  const onSubmit = (values) => {
+    const payload = {
+      fullName: values.fullName,
+      phone: values.phone,
+      address: values.address,
+      email: values.email,
+      oferta: true,
+      totalPrice: Math.round(getTotalPrice()),
+      items: cartItems.map((item) => ({
+        productId: item.id,
+        quantity: item.quantity,
+      })),
+    };
+
+    createOrder.mutate(payload, {
+      onSuccess: () => {
+        setIsSuccess(true);
+        clearCart();
+        toast.success(t("order.success"));
+        setTimeout(() => {
+          onOpenChange(false);
+          setIsSuccess(false);
+          form.reset();
+        }, 3000);
+      },
     });
-    setIsSuccess(true);
-    clearCart();
-    toast.success(t('order.success'));
-    setTimeout(() => {
-      onOpenChange(false);
-      setIsSuccess(false);
-      form.reset();
-    }, 3000);
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle>{t('order.title')}</DialogTitle>
+          <DialogTitle>{t("order.title")}</DialogTitle>
         </DialogHeader>
 
         {isSuccess ? (
           <div className="py-8 text-center">
             <div className="mb-4 text-6xl">✓</div>
             <p className="text-lg font-semibold text-primary">
-              {t('order.success')}
+              {t("order.success")}
             </p>
           </div>
         ) : (
@@ -90,7 +104,7 @@ const OrderModal = ({ open, onOpenChange }: OrderModalProps) => {
                 name="fullName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('order.fullName')}</FormLabel>
+                    <FormLabel>{t("order.fullName")}</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -104,7 +118,7 @@ const OrderModal = ({ open, onOpenChange }: OrderModalProps) => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('order.phone')}</FormLabel>
+                    <FormLabel>{t("order.phone")}</FormLabel>
                     <FormControl>
                       <Input {...field} type="tel" />
                     </FormControl>
@@ -118,7 +132,7 @@ const OrderModal = ({ open, onOpenChange }: OrderModalProps) => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('order.email')}</FormLabel>
+                    <FormLabel>{t("order.email")}</FormLabel>
                     <FormControl>
                       <Input {...field} type="email" />
                     </FormControl>
@@ -132,21 +146,7 @@ const OrderModal = ({ open, onOpenChange }: OrderModalProps) => {
                 name="address"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('order.address')}</FormLabel>
-                    <FormControl>
-                      <Textarea {...field} rows={2} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="notes"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('order.notes')}</FormLabel>
+                    <FormLabel>{t("order.address")}</FormLabel>
                     <FormControl>
                       <Textarea {...field} rows={2} />
                     </FormControl>
@@ -156,14 +156,14 @@ const OrderModal = ({ open, onOpenChange }: OrderModalProps) => {
               />
 
               <div className="flex items-center justify-between border-t pt-4">
-                <span className="font-semibold">{t('cart.total')}:</span>
+                <span className="font-semibold">{t("cart.total")}:</span>
                 <span className="text-2xl font-bold text-primary">
                   ${getTotalPrice().toFixed(2)}
                 </span>
               </div>
 
               <Button type="submit" className="w-full">
-                {t('order.submit')}
+                {t("order.submit")}
               </Button>
             </form>
           </Form>

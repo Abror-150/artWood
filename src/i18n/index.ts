@@ -92,7 +92,7 @@ const resources = {
         fullName: "To'liq ism",
         phone: "Telefon raqam",
         email: "Email",
-        address: "Yetkazib berish manzili",
+        address: "Manzil",
         notes: "Qo'shimcha eslatmalar (ixtiyoriy)",
         submit: "Buyurtmani tasdiqlash",
         success: "Rahmat! Buyurtmangiz qabul qilindi. Tez orada siz bilan bog'lanamiz."
@@ -195,7 +195,7 @@ const resources = {
         fullName: "Полное имя",
         phone: "Номер телефона",
         email: "Электронная почта",
-        address: "Адрес доставки",
+        address: "Адрес",
         notes: "Дополнительные примечания (необязательно)",
         submit: "Подтвердить заказ",
         success: "Спасибо! Ваш заказ получен. Скоро мы свяжемся с вами."
@@ -298,7 +298,7 @@ const resources = {
         fullName: "Full Name",
         phone: "Phone Number",
         email: "Email",
-        address: "Delivery Address",
+        address: "Address",
         notes: "Additional Notes (optional)",
         submit: "Confirm Order",
         success: "Thank you! Your order has been received. We'll contact you soon."

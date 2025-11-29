@@ -1,24 +1,25 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useCart } from '@/contexts/CartContext';
-import OrderModal from '@/components/OrderModal';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { Trash2, Plus, Minus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useCart } from "@/contexts/CartContext";
+import OrderModal from "@/components/OrderModal";
+import { motion } from "framer-motion";
 
 const Cart = () => {
   const { t } = useTranslation();
-  const { cartItems, updateQuantity, removeFromCart, getTotalPrice } = useCart();
+  const { cartItems, updateQuantity, removeFromCart, getTotalPrice } =
+    useCart();
   const [orderModalOpen, setOrderModalOpen] = useState(false);
 
   if (cartItems.length === 0) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">
-          <h2 className="mb-4 text-3xl font-bold">{t('cart.empty')}</h2>
+          <h2 className="mb-4 text-3xl font-bold">{t("cart.empty")}</h2>
           <Link to="/products">
-            <Button>{t('cart.continueShopping')}</Button>
+            <Button>{t("cart.continueShopping")}</Button>
           </Link>
         </div>
       </div>
@@ -33,7 +34,7 @@ const Cart = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="mb-8 text-4xl font-bold">{t('cart.title')}</h1>
+          <h1 className="mb-8 text-4xl font-bold">{t("cart.title")}</h1>
 
           <div className="space-y-4">
             {cartItems.map((item, index) => (
@@ -52,7 +53,7 @@ const Cart = () => {
                 <div className="flex-1">
                   <h3 className="font-semibold">{item.name}</h3>
                   <p className="text-sm text-muted-foreground">
-                    ${item.price.toFixed(2)}
+                    ${item.price}
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -78,7 +79,7 @@ const Cart = () => {
                 </div>
                 <div className="text-right">
                   <div className="font-bold">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ${(Number(item.price) * item.quantity).toFixed(2)}
                   </div>
                   <Button
                     variant="ghost"
@@ -95,7 +96,7 @@ const Cart = () => {
 
           <div className="mt-8 rounded-lg border bg-card p-6">
             <div className="mb-4 flex items-center justify-between text-xl font-bold">
-              <span>{t('cart.total')}:</span>
+              <span>{t("cart.total")}:</span>
               <span className="text-2xl text-primary">
                 ${getTotalPrice().toFixed(2)}
               </span>
@@ -103,24 +104,21 @@ const Cart = () => {
             <div className="flex gap-4">
               <Link to="/products" className="flex-1">
                 <Button variant="outline" className="w-full">
-                  {t('cart.continueShopping')}
+                  {t("cart.continueShopping")}
                 </Button>
               </Link>
               <Button
                 className="flex-1"
                 onClick={() => setOrderModalOpen(true)}
               >
-                {t('cart.checkout')}
+                {t("cart.checkout")}
               </Button>
             </div>
           </div>
         </motion.div>
       </div>
 
-      <OrderModal
-        open={orderModalOpen}
-        onOpenChange={setOrderModalOpen}
-      />
+      <OrderModal open={orderModalOpen} onOpenChange={setOrderModalOpen} />
     </div>
   );
 };
