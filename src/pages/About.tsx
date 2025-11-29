@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Award } from 'lucide-react';
 import { motion } from 'framer-motion';
-import craftsmanImage from '@/assets/about-craftsman.jpg';
+import craftsmanImage from '@/assets/art.png';
 
 const About = () => {
   const { t } = useTranslation();
